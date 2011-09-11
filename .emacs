@@ -20,3 +20,14 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
 (setq show-paren-delay 0)
+;;bind the slime selector to f12 and add a method for finding clojure buffers
+(define-key global-map (kbd "<f12>") 'slime-selector)
+(def-slime-selector-method ?j
+  "most recently visited clojure-mode buffer."
+  (slime-recently-visited-buffer 'clojure-mode))
+
+;;bind the slime selector to f12 and add a method for finding clojure buffers
+(define-key global-map (kbd "<f12>") 'slime-selector)
+(def-slime-selector-method ?j
+  "most recently visited clojure-mode buffer."
+  (slime-recently-visited-buffer 'clojure-mode))
